@@ -1,13 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, View } from 'react-native'
+import { LoginFormViewModel } from './src/login-form/login-form-view-model'
+import { LoginFormView } from './src/login-form/login-form-view'
 
 export default function App() {
+  const loginFormViewModel = new LoginFormViewModel()
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <LoginFormView viewModel={loginFormViewModel} />
+
       <StatusBar style="auto" />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -17,4 +22,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
